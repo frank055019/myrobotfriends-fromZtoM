@@ -1,5 +1,58 @@
 ﻿lesson file in https://github.com/aneagoie/robofriends
 
+BUT lesson in react 16.2.0 
+
+im start in react 16.12.0
+
+fix error 
+---------------------------------------
+const Card =({name, email, id}) =>{
+
+<img alt='robots' 
+			src={'http://robohash.org/${id}?200x200'} />
+
+variable "id" dont work,then i use 
+
+<img alt='robots' 
+			src={'http://robohash.org/'+id} 
+			style={{width: 200, height: 200}}/>
+ 
+it work
+---------------------------------------
+const CardList =({robots}) =>{
+	return(		
+		<div>
+		{
+			robots.map((user,i)=>{
+				return(
+					<div className='dib' >
+						<Card 
+						key={i}
+						name={robots[i].name} 
+						email={robots[i].email} 
+						id={robots[i].id} />
+					</div>
+					);
+			})
+		}
+		</div>
+		);
+	}
+variable "key" should in first parent
+
+			robots.map((user,i)=>{
+				return(
+					<div className='dib' key={i}>
+						<Card 
+						name={robots[i].name} 
+						email={robots[i].email} 
+						id={robots[i].id} />
+					</div>
+					);
+			})
+		}
+
+<!-- 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -68,3 +121,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ -->
